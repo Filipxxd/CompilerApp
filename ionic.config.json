@@ -1,0 +1,7 @@
+{
+  "name": "CompilerApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
