@@ -5,6 +5,7 @@ import { StorageService } from '../services/storage.service';
 import { Compilation } from '../models/compilation';
 import { SAVED_COMPILATIONS } from '../app.constants';
 import { SharedDataService } from '../services/shared-data.service';
+import { LanguageDisplayNames } from '../models/languages';
 
 @Component({
   selector: 'detail',
@@ -13,6 +14,7 @@ import { SharedDataService } from '../services/shared-data.service';
   standalone: false
 })
 export class DetailPage implements OnInit {
+  public languageDisplayNames = LanguageDisplayNames;
   compilation: Compilation | null = null;
   alreadySaved: boolean = false;
 
