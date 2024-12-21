@@ -16,6 +16,7 @@
     "compilationsPage": {
       "title": "Saved compilations",
       "search": "Search by name",
+      "languageAll": "All",
       "noCompilations": "No saved compilations"
     },
     "detailPage": {

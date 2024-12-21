@@ -16,6 +16,7 @@
     "compilationsPage": {
         "title": "Uložené kompilace",
         "search": "Vyhledat podle názvu",
+        "languageAll": "Vše",
         "noCompilations": "Žádné uložené kompilace"
     },
     "detailPage": {

@@ -6,17 +6,33 @@
 
 <ion-content [fullscreen]="true">
   <div *ngIf="!compilations" class="ion-padding ion-text-center">
-    <ion-spinner name="bubbles" />
+    <ion-spinner name="bubbles"></ion-spinner>
     <p>{{ 'shared.loading' | translate }}</p>
   </div>
 
   <ng-container *ngIf="compilations">
-    <ion-searchbar
-      placeholder="{{ 'compilationsPage.search' | translate }}"
-      (ionInput)="onSearchChange($event)"
-      debounce="300"
-      clearInput />
+    <div class="ion-padding" style="display: flex; align-items: center; justify-content: space-between;">
+      <ion-searchbar
+        placeholder="{{ 'compilationsPage.search' | translate }}"
+        (ionInput)="onSearchChange($event)"
+        debounce="300"
+        clearInput
+        style="flex: 1;"
+      ></ion-searchbar>
 
+      <ion-select
+        [(ngModel)]="selectedLanguage"
+        (ionChange)="onLanguageChange($event)"
+        placeholder="Select Language"
+        interface="popover"
+        style="width: 20%;"
+      >
+        <ion-select-option *ngFor="let lang of languages" [value]="lang">
+          {{ lang ? languageDisplayNames[lang] : 'compilationsPage.languageAll' | translate  }}
+        </ion-select-option>
+      </ion-select>
+    </div>
+    
     <ion-list *ngIf="filteredCompilations && filteredCompilations.length > 0; else emptyState">
       <ion-item 
         *ngFor="let compilation of filteredCompilations" 
@@ -26,13 +42,14 @@
         <ion-label>
           <h2>{{ compilation.title }}</h2>
           <p>{{ compilation.timestamp | date:'dd. MM. yyyy HH:mm' }}</p>
+          <p>{{ languageDisplayNames[compilation.request.language] }}</p>
         </ion-label>
         <ion-icon name="chevron-forward" slot="end"></ion-icon>
       </ion-item>
     </ion-list>
-
+  
     <ng-template #emptyState>
-      <div class="empty-state">
+      <div class="empty-state ion-text-center ion-padding">
         <ion-icon name="document-outline" size="large"></ion-icon>
         <p>{{ 'compilationsPage.noCompilations' | translate }}</p>
       </div>
