@@ -1,0 +1,25 @@
+{
+    "shared": {
+      "language": "Language",
+      "code": "Code",
+      "input": "Input",
+      "loading": "Loading..."
+    },
+    "tabs": {
+      "compiler": "Compiler",
+      "savedCompilations": "Saved"
+    },
+    "compilerPage": {
+      "title": "Compilator",
+      "button": "Compile"
+    },
+    "compilationsPage": {
+      "title": "Saved compilations",
+      "search": "Search by name",
+      "noCompilations": "No saved compilations"
+    },
+    "detailPage": {
+      "title": "Compilation Detail",
+      "output": "Output"
+    }
+}

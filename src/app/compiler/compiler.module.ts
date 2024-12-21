@@ -6,6 +6,7 @@ import { CompilationPage } from './compiler.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { CompilationPageRoutingModule } from './compiler-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { CompilationPageRoutingModule } from './compiler-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    CompilationPageRoutingModule
+    CompilationPageRoutingModule,
+    TranslateModule
   ],
   declarations: [CompilationPage]
 })

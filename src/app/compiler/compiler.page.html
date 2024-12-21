@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">Compiler</ion-title>
+    <ion-title class="ion-text-center">{{ 'compilerPage.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,19 +9,19 @@
     <ion-card>
       <ion-card-content>
         <ion-item>
-          <ion-label position="stacked">Code</ion-label>
+          <ion-label position="stacked">{{ 'shared.code' | translate }}</ion-label>
           <ion-textarea [(ngModel)]="request.code" name="code" required rows="10"></ion-textarea>
         </ion-item>
         
         <ion-item>
-          <ion-label position="stacked">Language</ion-label>
+          <ion-label position="stacked">{{ 'shared.language' | translate }}</ion-label>
           <ion-select [(ngModel)]="request.language" name="language" placeholder="Select Language" required>
             <ion-select-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</ion-select-option>
           </ion-select>
         </ion-item>
         
         <ion-item>
-          <ion-label position="stacked">Code Input</ion-label>
+          <ion-label position="stacked">{{ 'shared.input' | translate }}</ion-label>
           <ion-input [(ngModel)]="request.input" name="input"></ion-input>
         </ion-item>
         
@@ -35,7 +35,7 @@
           >
             <ion-label style="display: flex; align-items: center; justify-content: center; width: 100%;">
               <ion-spinner *ngIf="isBusy" slot="start" style="margin-right: 8px;"></ion-spinner>
-              Compile
+              {{ 'compilerPage.button' | translate }}
             </ion-label>
           </ion-button>
         </div>

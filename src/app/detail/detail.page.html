@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">Compilation Detail</ion-title>
+    <ion-title class="ion-text-center">{{ 'detailPage.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <div *ngIf="!compilation; else compilationContent" class="ion-padding ion-text-center">
     <ion-spinner name="bubbles" />
-    <p>Loading</p>
+    <p>{{ 'shared.loading' | translate }}</p>
   </div>
 
   <ng-template #compilationContent>
@@ -35,21 +35,21 @@
 
       <ion-card-content>
         <ion-item>
-          <ion-label color="medium"><strong>Language:</strong></ion-label>
+          <ion-label color="medium"><strong>{{ 'shared.language' | translate }}</strong></ion-label>
           <ion-text>{{ compilation!.request.language }}</ion-text>
         </ion-item>
         <ion-item>
-          <ion-label color="medium"><strong>Code:</strong></ion-label>
+          <ion-label color="medium"><strong>{{ 'shared.code' | translate }}:</strong></ion-label>
           <pre><code>{{ compilation!.request.code }}</code></pre>
         </ion-item>
         <ion-item>
-          <ion-label color="medium"><strong>Input:</strong></ion-label>
+          <ion-label color="medium"><strong>{{ 'shared.input' | translate }}:</strong></ion-label>
           <ion-text>{{ compilation!.request.input }}</ion-text>
         </ion-item>
       </ion-card-content>
 
       <ion-card-content>
-        <ion-card-title>Output</ion-card-title>
+        <ion-card-title>{{ 'detailPage.output' | translate }}</ion-card-title>
         <pre>{{ compilation!.response.output }}</pre>
       </ion-card-content>
     </ion-card>

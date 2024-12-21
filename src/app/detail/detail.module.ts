@@ -6,6 +6,7 @@ import { DetailPage } from './detail.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { DetailPageRoutingModule } from './detail-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { DetailPageRoutingModule } from './detail-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    DetailPageRoutingModule
+    DetailPageRoutingModule,
+    TranslateModule
   ],
   declarations: [DetailPage]
 })

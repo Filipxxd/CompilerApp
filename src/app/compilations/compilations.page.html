@@ -1,18 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">Saved Compilations</ion-title>
+    <ion-title class="ion-text-center">{{ 'compilationsPage.title' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div *ngIf="!compilations" class="ion-padding ion-text-center">
     <ion-spinner name="bubbles" />
-    <p>Loading</p>
+    <p>{{ 'shared.loading' | translate }}</p>
   </div>
 
   <ng-container *ngIf="compilations">
     <ion-searchbar
-      placeholder="Search by title"
+      placeholder="{{ 'compilationsPage.search' | translate }}"
       (ionInput)="onSearchChange($event)"
       debounce="300"
       clearInput />
@@ -34,7 +34,7 @@
     <ng-template #emptyState>
       <div class="empty-state">
         <ion-icon name="document-outline" size="large"></ion-icon>
-        <p>No compilations found!</p>
+        <p>{{ 'compilationsPage.noCompilations' | translate }}</p>
       </div>
     </ng-template>
   </ng-container>

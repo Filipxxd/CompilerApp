@@ -1,0 +1,25 @@
+{
+    "shared": {
+        "language": "Jazyk",
+        "code": "Kód",
+        "input": "Vstup",
+        "loading": "Načítání..."
+    },
+    "tabs": {
+        "compiler": "Kompilátor",
+        "savedCompilations": "Uložené"
+    },
+    "compilerPage": {
+        "title": "Kompilátor",
+        "button": "Kompilovat"
+    },
+    "compilationsPage": {
+        "title": "Uložené kompilace",
+        "search": "Vyhledat podle názvu",
+        "noCompilations": "Žádné uložené kompilace"
+    },
+    "detailPage": {
+      "title": "Detail kompilace",
+      "output": "Výstup"
+    }
+}
