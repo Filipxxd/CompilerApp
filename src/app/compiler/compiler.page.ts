@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CompilerApiService } from '../services/compiler-api.service';
-import { Language } from '../models/languages';
+import { Language, LanguageDisplayNames } from '../models/languages';
 import { CompilerRequest, CompilerResponse } from '../models/compiler.api';
 import { Router } from '@angular/router';
 import { SharedDataService } from '../services/shared-data.service';
@@ -15,11 +15,13 @@ import { v4 as uuid } from 'uuid';
   standalone: false
 })
 export class CompilationPage implements OnInit {
+[x: string]: any;
   request: CompilerRequest = {
     language: Language.PYTHON,
     code: '',
     input: ''
   };
+  public languageDisplayNames = LanguageDisplayNames;
   languages = Object.values(Language);
   isEditMode: boolean = false;
   isBusy: boolean = false;

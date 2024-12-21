@@ -16,3 +16,22 @@ export enum Language {
   FORTRAN = 'fortran',
   BASH = 'bash',
 }
+
+export const LanguageDisplayNames: { [key in Language]: string } = {
+  [Language.PHP]: 'PHP',
+  [Language.PYTHON]: 'Python',
+  [Language.C]: 'C',
+  [Language.C_CPP]: 'C/C++',
+  [Language.CSHARP]: 'C#',
+  [Language.KOTLIN]: 'Kotlin',
+  [Language.GOLANG]: 'Go',
+  [Language.R]: 'R',
+  [Language.JAVA]: 'Java',
+  [Language.TYPESCRIPT]: 'TypeScript',
+  [Language.NODEJS]: 'Node.js',
+  [Language.RUBY]: 'Ruby',
+  [Language.PERL]: 'Perl',
+  [Language.SWIFT]: 'Swift',
+  [Language.FORTRAN]: 'Fortran',
+  [Language.BASH]: 'Bash',
+};

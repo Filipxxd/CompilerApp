@@ -16,7 +16,7 @@
         <ion-item>
           <ion-label position="stacked">{{ 'shared.language' | translate }}</ion-label>
           <ion-select [(ngModel)]="request.language" name="language" placeholder="Select Language" required>
-            <ion-select-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</ion-select-option>
+            <ion-select-option *ngFor="let lang of languages" [value]="lang">{{ languageDisplayNames[lang] }}</ion-select-option>
           </ion-select>
         </ion-item>
         
