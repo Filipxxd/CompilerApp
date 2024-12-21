@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Saved Compilations</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!compilations" class="ion-padding ion-text-center">
+    <ion-spinner name="bubbles" />
+    <p>Loading</p>
+  </div>
+
+  <ng-container *ngIf="compilations">
+    <ion-searchbar
+      placeholder="Search by title"
+      (ionInput)="onSearchChange($event)"
+      debounce="300"
+      clearInput />
+
+    <ion-list *ngIf="filteredCompilations && filteredCompilations.length > 0; else emptyState">
+      <ion-item 
+        *ngFor="let compilation of filteredCompilations" 
+        (click)="navigateToDetail(compilation.id)"
+        lines="full"
+      >
+        <ion-label>
+          <h2>{{ compilation.title }}</h2>
+          <p>{{ compilation.timestamp | date:'dd. MM. yyyy HH:mm' }}</p>
+        </ion-label>
+        <ion-icon name="chevron-forward" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ng-template #emptyState>
+      <div class="empty-state">
+        <ion-icon name="document-outline" size="large"></ion-icon>
+        <p>No compilations found!</p>
+      </div>
+    </ng-template>
+  </ng-container>
+</ion-content>

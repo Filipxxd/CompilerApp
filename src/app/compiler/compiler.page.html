@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Compiler</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Code</ion-label>
+          <ion-textarea [(ngModel)]="request.code" name="code" required rows="10"></ion-textarea>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="stacked">Language</ion-label>
+          <ion-select [(ngModel)]="request.language" name="language" placeholder="Select Language" required>
+            <ion-select-option *ngFor="let lang of languages" [value]="lang">{{ lang }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label position="stacked">Code Input</ion-label>
+          <ion-input [(ngModel)]="request.input" name="input"></ion-input>
+        </ion-item>
+        
+        <div class="ion-text-center ion-margin-top">
+          <ion-button
+            type="submit"
+            expand="block"
+            color="primary"
+            [disabled]="isBusy"
+            style="display: flex; align-items: center;"
+          >
+            <ion-label style="display: flex; align-items: center; justify-content: center; width: 100%;">
+              <ion-spinner *ngIf="isBusy" slot="start" style="margin-right: 8px;"></ion-spinner>
+              Compile
+            </ion-label>
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

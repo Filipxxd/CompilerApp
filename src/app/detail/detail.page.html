@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Compilation Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div *ngIf="!compilation; else compilationContent" class="ion-padding ion-text-center">
+    <ion-spinner name="bubbles" />
+    <p>Loading</p>
+  </div>
+
+  <ng-template #compilationContent>
+    <ion-card>
+      <ion-card-content>
+        <div class="header-row">
+          <ion-input
+            [(ngModel)]="compilation!.title"
+            class="input-title">
+          </ion-input>
+          
+          <div class="button-wrapper">
+            <ion-button (click)="onEdit()" fill="clear">
+              <ion-icon slot="icon-only" name="create-outline" size="medium" />
+            </ion-button>
+            <ion-button (click)="onSave()" fill="clear">
+              <ion-icon slot="icon-only" name="save-outline" size="medium" class="ion-margin-horizontal" />
+            </ion-button>
+            <ion-button (click)="onDelete()" fill="clear">
+              <ion-icon slot="icon-only" name="close-circle-outline" size="medium" />
+            </ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label color="medium"><strong>Language:</strong></ion-label>
+          <ion-text>{{ compilation!.request.language }}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label color="medium"><strong>Code:</strong></ion-label>
+          <pre><code>{{ compilation!.request.code }}</code></pre>
+        </ion-item>
+        <ion-item>
+          <ion-label color="medium"><strong>Input:</strong></ion-label>
+          <ion-text>{{ compilation!.request.input }}</ion-text>
+        </ion-item>
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-card-title>Output</ion-card-title>
+        <pre>{{ compilation!.response.output }}</pre>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

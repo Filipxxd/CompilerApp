@@ -1,0 +1,14 @@
+.header-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-title {
+    flex-grow: 1;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+}
