@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
 import { Compilation } from '../_models/compilation';
 import { StateService } from '../_services/state.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'detail',
@@ -17,6 +18,7 @@ export class DetailPage implements OnInit {
   constructor(    
     private router: Router,
     private route: ActivatedRoute,
+    private translateService: TranslateService,
     private stateService: StateService,
     private alertController: AlertController,
     private toastController: ToastController
@@ -40,7 +42,7 @@ export class DetailPage implements OnInit {
 
     if (!this.compilation){
         const toast = await this.toastController.create({
-          message: 'Compiler not found',
+          message: this.translateService.instant('shared.toastError'),
           duration: 1500,
           position: 'top',
           icon: 'alert-circle-outline',
@@ -66,7 +68,7 @@ export class DetailPage implements OnInit {
     this.stateService.setCompilations(compilations);
 
     const toast = await this.toastController.create({
-      message: 'Compiler has been saved',
+      message: this.translateService.instant('detailPage.toastSuccessSave'),
       duration: 1500,
       position: 'top',
       icon: 'checkmark-outline',
@@ -86,15 +88,15 @@ export class DetailPage implements OnInit {
 
   async onDelete() {
     const alert = await this.alertController.create({
-      header: 'Delete Compiler',
-      message: 'Are you sure you want to delete this compilation?',
+      header: this.translateService.instant('detailPage.promptDeleteTitle'),
+      message: this.translateService.instant('detailPage.promptDelete'),
       buttons: [
         {
-          text: 'Cancel',
+          text: this.translateService.instant('detailPage.promptBtnCancel'),
           role: 'cancel',
         },
         {
-          text: 'Delete',
+          text: this.translateService.instant('detailPage.promptBtnDelete'),
           handler: async () => {
             if (this.alreadySaved){
               const compilations = await this.stateService.getCompilations();
@@ -104,7 +106,7 @@ export class DetailPage implements OnInit {
             this.router.navigate(['/tabs/compilations']);
 
             const toast = await this.toastController.create({
-              message: 'Compiler has been deleted',
+              message: this.translateService.instant('detailPage.toastSuccessDelete'),
               duration: 1500,
               position: 'top',
               icon: 'checkmark-outline',

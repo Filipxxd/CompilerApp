@@ -24,7 +24,13 @@
     },
     "detailPage": {
       "title": "Detail kompilace",
-      "output": "Výstup"
+      "output": "Výstup",
+      "toastSuccessSave": "Uloženo",
+      "toastSuccessDelete": "Odstraněno",
+      "promptDeleteTitle": "Odstranit kompilaci",
+      "promptBtnDelete": "Odstranit",
+      "promptBtnCancel": "Zrušit",
+      "promptDelete": "Opravdu chcete smazat tuto kompilaci?"
     },
     "settingsPage":{
       "title": "Nastavení",

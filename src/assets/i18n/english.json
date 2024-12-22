@@ -24,7 +24,13 @@
     },
     "detailPage": {
       "title": "Compilation Detail",
-      "output": "Output"
+      "output": "Output",
+      "toastSuccessSave": "Saved",
+      "toastSuccessDelete": "Deleted",
+      "promptDeleteTitle": "Delete compilation",
+      "promptBtnDelete": "Delete",
+      "promptBtnCancel": "Cancel",
+      "promptDelete": "Do you really want to delete this compilation?"
     },
     "settingsPage":{
       "title": "Settings",
