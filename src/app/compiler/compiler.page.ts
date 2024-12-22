@@ -20,10 +20,9 @@ export class CompilationPage implements OnInit {
     code: '',
     input: ''
   };
+  existingCompilation: Compilation | null = null;
   languages = Object.values(Language);
-  isEditMode: boolean = false;
   isBusy: boolean = false;
-  compilationId: string | null = null;
 
   constructor(
     private compilerApi: CompilerApiService,
@@ -36,21 +35,13 @@ export class CompilationPage implements OnInit {
 
   async ionViewWillEnter(){
     const userSettings = await this.stateService.getUserSettings();
-    const currentCompilation = this.stateService.getCurrentCompilation();
+    this.existingCompilation = this.stateService.getCurrentCompilation();
 
-    if (currentCompilation) {
-      this.isEditMode = true;
-      this.compilationId = currentCompilation.id;
-      this.request = { ...currentCompilation.request };
-    }else{
-      this.request = {
-        language: userSettings.programmingLanguage,
-        code: '',
-        input: ''
-      };
-      this.compilationId = null;
-      this.isEditMode = false;
-    }
+    this.request = this.existingCompilation 
+      ? { ...this.existingCompilation.request }
+      : { language: userSettings.programmingLanguage, code: '', input: '' };
+
+    this.stateService.setCurrentCompilation(null);
   }
 
   async onSubmit() {
@@ -58,15 +49,13 @@ export class CompilationPage implements OnInit {
 
     this.compilerApi.compileCode(this.request).subscribe({
       next: async (response: CompilerResponse) => {
-        const compilation: Compilation = {
-          id: this.isEditMode ? this.compilationId! : uuid(),
-          title: this.isEditMode ? this.stateService.getCurrentCompilation()!.title : 'Untitled Compiler',
+        this.stateService.setCurrentCompilation({
+          id: this.existingCompilation?.id  ?? uuid(),
+          title: this.existingCompilation?.title ?? 'Untitled Compiler',
           request: this.request,
           response: response,
           timestamp: new Date()
-        };
-
-        this.stateService.setCurrentCompilation(compilation);
+        });
 
         this.router.navigate(['tabs/detail']);
       },
@@ -83,9 +72,7 @@ export class CompilationPage implements OnInit {
         this.isBusy = false;
         console.error('Compiler error:', error);
       },
-      complete: async () => {
-        this.isBusy = false;
-      }
+      complete: () => this.isBusy = false,
     });
   }
 }
