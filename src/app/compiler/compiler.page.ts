@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CompilerApiService } from '../_services/compiler-api.service';
-import { Language, LanguageDisplayNames } from '../_models/languages';
+import { Language } from '../_models/languages';
 import { CompilerRequest, CompilerResponse } from '../_models/compiler.api';
 import { Router } from '@angular/router';
 import { Compilation } from '../_models/compilation';
@@ -20,7 +20,6 @@ export class CompilationPage implements OnInit {
     code: '',
     input: ''
   };
-  public languageDisplayNames = LanguageDisplayNames;
   languages = Object.values(Language);
   isEditMode: boolean = false;
   isBusy: boolean = false;

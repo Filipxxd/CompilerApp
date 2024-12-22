@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Compilation } from '../_models/compilation';
-import { Language, LanguageDisplayNames } from '../_models/languages';
+import { Language } from '../_models/languages';
 import { StateService } from '../_services/state.service';
 
 @Component({
@@ -11,7 +11,6 @@ import { StateService } from '../_services/state.service';
   standalone: false
 })
 export class CompilationsPage implements OnInit {
-  public languageDisplayNames = LanguageDisplayNames;
   filteredCompilations: Compilation[] | null = null;
   searchTerm: string = '';
   selectedLanguage: Language | null = null;

@@ -5,12 +5,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="!compilations" class="ion-padding ion-text-center">
+  <div *ngIf="!filteredCompilations" class="ion-padding ion-text-center">
     <ion-spinner name="bubbles"></ion-spinner>
     <p>{{ 'shared.loading' | translate }}</p>
   </div>
 
-  <ng-container *ngIf="compilations">
+  <ng-container *ngIf="filteredCompilations">
     <div class="ion-padding" style="display: flex; align-items: center; justify-content: space-between;">
       <ion-searchbar
         placeholder="{{ 'compilationsPage.search' | translate }}"
@@ -28,7 +28,7 @@
         style="width: 20%;"
       >
         <ion-select-option *ngFor="let lang of languages" [value]="lang">
-          {{ lang ? languageDisplayNames[lang] : 'compilationsPage.languageAll' | translate  }}
+          {{ lang ?? 'compilationsPage.languageAll' | translate  }}
         </ion-select-option>
       </ion-select>
     </div>
@@ -42,7 +42,7 @@
         <ion-label>
           <h2>{{ compilation.title }}</h2>
           <p>{{ compilation.timestamp | date:'dd. MM. yyyy HH:mm' }}</p>
-          <p>{{ languageDisplayNames[compilation.request.language] }}</p>
+          <p>{{ compilation.request.language }}</p>
         </ion-label>
         <ion-icon name="chevron-forward" slot="end"></ion-icon>
       </ion-item>

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-import { StorageService } from '../_services/storage.service';
 import { Compilation } from '../_models/compilation';
-import { SAVED_COMPILATIONS } from '../app.constants';
-import { LanguageDisplayNames } from '../_models/languages';
 import { StateService } from '../_services/state.service';
 
 @Component({
@@ -14,7 +11,6 @@ import { StateService } from '../_services/state.service';
   standalone: false
 })
 export class DetailPage implements OnInit {
-  public languageDisplayNames = LanguageDisplayNames;
   compilation: Compilation | null = null;
   alreadySaved: boolean = false;
 
@@ -60,8 +56,8 @@ export class DetailPage implements OnInit {
     if (!this.compilation) return;
 
     const compilations = await this.stateService.getCompilations();
-
     const index = compilations.findIndex((c: { id: string; }) => c.id === this.compilation!.id);
+
     if (index !== -1)
       compilations[index] = this.compilation;
     else
