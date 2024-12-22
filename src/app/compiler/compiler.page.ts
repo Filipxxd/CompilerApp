@@ -3,10 +3,10 @@ import { CompilerApiService } from '../_services/compiler-api.service';
 import { Language, LanguageDisplayNames } from '../_models/languages';
 import { CompilerRequest, CompilerResponse } from '../_models/compiler.api';
 import { Router } from '@angular/router';
-import { SharedDataService } from '../_services/shared-data.service';
 import { Compilation } from '../_models/compilation';
 import { ToastController } from '@ionic/angular';
 import { v4 as uuid } from 'uuid';
+import { StateService } from '../_services/state.service';
 
 @Component({
   selector: 'compiler',
@@ -29,18 +29,19 @@ export class CompilationPage implements OnInit {
   constructor(
     private compilerApi: CompilerApiService,
     private router: Router,
-    private sharedDataService: SharedDataService,
+    private stateService: StateService,
     private toastController: ToastController
   ) {}
 
   ngOnInit() {}
 
   async ionViewWillEnter(){
-    const savedCompilation = this.sharedDataService.getSavedCompilation();
-    if (savedCompilation) {
+    const currentCompilation = this.stateService.getCurrentCompilation();
+
+    if (currentCompilation) {
       this.isEditMode = true;
-      this.compilationId = savedCompilation.id;
-      this.request = { ...savedCompilation.request };
+      this.compilationId = currentCompilation.id;
+      this.request = { ...currentCompilation.request };
     }else{
       this.request = {
         language: Language.PYTHON,
@@ -57,15 +58,15 @@ export class CompilationPage implements OnInit {
 
     this.compilerApi.compileCode(this.request).subscribe({
       next: async (response: CompilerResponse) => {
-        const savedCompilation: Compilation = {
+        const compilation: Compilation = {
           id: this.isEditMode ? this.compilationId! : uuid(),
-          title: this.isEditMode ? this.sharedDataService.getSavedCompilation()!.title : 'Untitled Compiler',
+          title: this.isEditMode ? this.stateService.getCurrentCompilation()!.title : 'Untitled Compiler',
           request: this.request,
           response: response,
           timestamp: new Date()
         };
 
-        this.sharedDataService.setSavedCompilation(savedCompilation);
+        this.stateService.setCurrentCompilation(compilation);
 
         this.router.navigate(['tabs/detail']);
       },

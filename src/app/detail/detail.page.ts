@@ -4,8 +4,8 @@ import { AlertController, ToastController } from '@ionic/angular';
 import { StorageService } from '../_services/storage.service';
 import { Compilation } from '../_models/compilation';
 import { SAVED_COMPILATIONS } from '../app.constants';
-import { SharedDataService } from '../_services/shared-data.service';
 import { LanguageDisplayNames } from '../_models/languages';
+import { StateService } from '../_services/state.service';
 
 @Component({
   selector: 'detail',
@@ -21,8 +21,7 @@ export class DetailPage implements OnInit {
   constructor(    
     private router: Router,
     private route: ActivatedRoute,
-    private storageService: StorageService,
-    private sharedDataService: SharedDataService,
+    private stateService: StateService,
     private alertController: AlertController,
     private toastController: ToastController
   ) {}
@@ -34,14 +33,14 @@ export class DetailPage implements OnInit {
     const compilationId = this.route.snapshot.paramMap.get('id');
 
     if (compilationId) {
-      const compilations = await this.storageService.get(SAVED_COMPILATIONS) as Compilation[];
+      const compilations = await this.stateService.getCompilations();
       this.compilation = compilations.find((c) => c.id === compilationId) || null;
     } else {
-      this.compilation = this.sharedDataService.getSavedCompilation();
+      this.compilation = this.stateService.getCurrentCompilation();
       this.alreadySaved = false;
     }
 
-    this.sharedDataService.clear();
+    this.stateService.setCurrentCompilation(null);
 
     if (!this.compilation){
         const toast = await this.toastController.create({
@@ -60,16 +59,15 @@ export class DetailPage implements OnInit {
   async onSave() {
     if (!this.compilation) return;
 
-    const compilations = (await this.storageService.get(SAVED_COMPILATIONS)) || [] as Compilation[];
+    const compilations = await this.stateService.getCompilations();
 
     const index = compilations.findIndex((c: { id: string; }) => c.id === this.compilation!.id);
-    if (index !== -1) {
+    if (index !== -1)
       compilations[index] = this.compilation;
-    } else {
+    else
       compilations.push(this.compilation);
-    }
 
-    this.storageService.set(SAVED_COMPILATIONS, compilations);
+    this.stateService.setCompilations(compilations);
 
     const toast = await this.toastController.create({
       message: 'Compiler has been saved',
@@ -86,7 +84,7 @@ export class DetailPage implements OnInit {
   async onEdit() {
     if (!this.compilation) return;
 
-    this.sharedDataService.setSavedCompilation(this.compilation);
+    this.stateService.setCurrentCompilation(this.compilation);
     this.router.navigate(['/tabs/compiler']);
   }
 
@@ -103,9 +101,9 @@ export class DetailPage implements OnInit {
           text: 'Delete',
           handler: async () => {
             if (this.alreadySaved){
-              const compilations = (await this.storageService.get(SAVED_COMPILATIONS)) || [] as Compilation[];
+              const compilations = await this.stateService.getCompilations();
               const updatedCompilations = compilations.filter((c: { id: string; }) => c.id !== this.compilation!.id);
-              this.storageService.set(SAVED_COMPILATIONS, updatedCompilations);
+              this.stateService.setCompilations(updatedCompilations);
             }
             this.router.navigate(['/tabs/compilations']);
 
