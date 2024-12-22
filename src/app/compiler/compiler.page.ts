@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CompilerApiService } from '../services/compiler-api.service';
-import { Language, LanguageDisplayNames } from '../models/languages';
-import { CompilerRequest, CompilerResponse } from '../models/compiler.api';
+import { CompilerApiService } from '../_services/compiler-api.service';
+import { Language, LanguageDisplayNames } from '../_models/languages';
+import { CompilerRequest, CompilerResponse } from '../_models/compiler.api';
 import { Router } from '@angular/router';
-import { SharedDataService } from '../services/shared-data.service';
-import { Compilation } from '../models/compilation';
+import { SharedDataService } from '../_services/shared-data.service';
+import { Compilation } from '../_models/compilation';
 import { ToastController } from '@ionic/angular';
 import { v4 as uuid } from 'uuid';
 

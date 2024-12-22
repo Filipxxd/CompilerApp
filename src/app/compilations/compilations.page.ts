@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from '../services/storage.service';
-import { Compilation } from '../models/compilation';
+import { StorageService } from '../_services/storage.service';
+import { Compilation } from '../_models/compilation';
 import { SAVED_COMPILATIONS } from '../app.constants';
-import { Language, LanguageDisplayNames } from '../models/languages';
+import { Language, LanguageDisplayNames } from '../_models/languages';
 
 @Component({
   selector: 'compilations',

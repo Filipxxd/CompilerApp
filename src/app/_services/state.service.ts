@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserSettings } from '../models/userSettings';
-import { Language } from '../models/languages';
+import { UserSettings } from '../_models/userSettings';
+import { Language } from '../_models/languages';
 import { DEFAULT_APP_LANGUAGE, USER_SETTINGS } from '../app.constants';
 import { StorageService } from './storage.service';
 

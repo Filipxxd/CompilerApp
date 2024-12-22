@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { environment } from "src/environments/environment";
-import { CompilerResponse } from "../models/compiler.api";
-import { CompilerRequest } from "../models/compiler.api";
+import { CompilerResponse } from "../_models/compiler.api";
+import { CompilerRequest } from "../_models/compiler.api";
 
 @Injectable({
   providedIn: "root",

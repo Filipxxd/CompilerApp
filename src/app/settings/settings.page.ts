@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageDisplayNames } from '../models/languages';
-import { UserSettings } from '../models/userSettings';
+import { LanguageDisplayNames } from '../_models/languages';
+import { UserSettings } from '../_models/userSettings';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastController } from '@ionic/angular';
-import { StateService } from '../services/state.service';
+import { StateService } from '../_services/state.service';
 
 @Component({
   selector: 'app-settings',

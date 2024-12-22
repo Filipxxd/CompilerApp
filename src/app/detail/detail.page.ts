@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-import { StorageService } from '../services/storage.service';
-import { Compilation } from '../models/compilation';
+import { StorageService } from '../_services/storage.service';
+import { Compilation } from '../_models/compilation';
 import { SAVED_COMPILATIONS } from '../app.constants';
-import { SharedDataService } from '../services/shared-data.service';
-import { LanguageDisplayNames } from '../models/languages';
+import { SharedDataService } from '../_services/shared-data.service';
+import { LanguageDisplayNames } from '../_models/languages';
 
 @Component({
   selector: 'detail',
