@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { TabsPageRoutingModule } from './tabs-routing.module';
+import { NavigationPageRoutingModule } from './navigation-routing.module';
 
-import { TabsPage } from './tabs.page';
+import { NavigationPage } from './navigation.page';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
@@ -13,9 +13,9 @@ import { TranslateModule } from '@ngx-translate/core';
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule,
+    NavigationPageRoutingModule,
     TranslateModule
   ],
-  declarations: [TabsPage]
+  declarations: [NavigationPage]
 })
-export class TabsPageModule {}
+export class NavigationPageModule {}
