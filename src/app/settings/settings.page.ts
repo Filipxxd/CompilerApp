@@ -3,6 +3,7 @@ import { UserSettings } from '../_models/userSettings';
 import { TranslateService } from '@ngx-translate/core';
 import { ToastController } from '@ionic/angular';
 import { StateService } from '../_services/state.service';
+import { Language } from '../_models/languages';
 
 @Component({
   selector: 'app-settings',
@@ -13,6 +14,7 @@ import { StateService } from '../_services/state.service';
 export class SettingsPage implements OnInit {
   userSettings: UserSettings | null = null;
   internalizationLanguages: string[] = [];
+  programmingLanguages = Object.values(Language);
 
   constructor(
     private translate: TranslateService,
@@ -58,4 +60,35 @@ export class SettingsPage implements OnInit {
       await toast.present();
     }
   }
+
+  async changeProgrammingLanguage(event: CustomEvent){
+    const language = event.detail.value;
+
+    if (this.programmingLanguages.includes(language))
+    {
+      this.userSettings!.programmingLanguage = language;
+      await this.stateService.setUserSettings(this.userSettings!);
+
+      const toast = await this.toastController.create({
+        message: this.translate.instant('settingsPage.toastSuccess'),
+        duration: 1500,
+        position: 'top',
+        icon: 'checkmark-outline',
+        swipeGesture: 'vertical'
+      });
+      
+      await toast.present();
+    }else{
+      const toast = await this.toastController.create({
+        message: this.translate.instant('shared.toastError'),
+        duration: 1500,
+        position: 'top',
+        icon: 'alert-circle-outline',
+        swipeGesture: 'vertical'
+      });
+
+      await toast.present();
+    }
+  }
+  
 }

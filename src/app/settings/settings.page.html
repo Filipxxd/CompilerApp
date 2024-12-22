@@ -13,9 +13,18 @@
  <ng-template #settingsContent>
     <ion-item>
       <ion-label position="stacked">{{ 'settingsPage.internalizationLanguage' | translate }}</ion-label>
-      <ion-select [(ngModel)]="userSettings!.internalization" name="language" (ionChange)="changeInternalizationLanguage($event)">
+      <ion-select [(ngModel)]="userSettings!.internalization" name="appLanguage" (ionChange)="changeInternalizationLanguage($event)">
         <ion-select-option *ngFor="let lang of internalizationLanguages" [value]="lang">
           {{ ('settingsPage.' + lang) | translate }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">{{ 'settingsPage.programmingLanguage' | translate }}</ion-label>
+      <ion-select [(ngModel)]="userSettings!.programmingLanguage" name="programmingLanguage" (ionChange)="changeProgrammingLanguage($event)">
+        <ion-select-option *ngFor="let lang of programmingLanguages" [value]="lang">
+          {{ lang }}
         </ion-select-option>
       </ion-select>
     </ion-item>

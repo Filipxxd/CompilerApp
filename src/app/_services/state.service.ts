@@ -30,7 +30,7 @@ export class StateService {
         this.userSettings = {
           internalization: DEFAULT_APP_LANGUAGE,
           theme: 'light',
-          language: Language.PYTHON
+          programmingLanguage: Language.PYTHON
         };
 
         await this.storageService.set(USER_SETTINGS, this.userSettings);

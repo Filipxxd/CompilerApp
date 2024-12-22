@@ -29,6 +29,7 @@
     "settingsPage":{
       "title": "Settings",
       "internalizationLanguage": "Application language",
+      "programmingLanguage": "Programming language",
       "czech": "Czech",
       "english": "English",
       "toastSuccess": "Language successfully changed"

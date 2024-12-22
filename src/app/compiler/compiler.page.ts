@@ -35,6 +35,7 @@ export class CompilationPage implements OnInit {
   ngOnInit() {}
 
   async ionViewWillEnter(){
+    const userSettings = await this.stateService.getUserSettings();
     const currentCompilation = this.stateService.getCurrentCompilation();
 
     if (currentCompilation) {
@@ -43,7 +44,7 @@ export class CompilationPage implements OnInit {
       this.request = { ...currentCompilation.request };
     }else{
       this.request = {
-        language: Language.PYTHON,
+        language: userSettings.programmingLanguage,
         code: '',
         input: ''
       };
