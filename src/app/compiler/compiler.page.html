@@ -8,7 +8,7 @@
   <form (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="stacked">{{ 'shared.code' | translate }}</ion-label>
-      <ion-textarea [(ngModel)]="request.code" name="code" required rows="10"></ion-textarea>
+      <ion-textarea [(ngModel)]="request.code" name="code" required rows="10" wrap="off"></ion-textarea>
     </ion-item>
     
     <ion-item>

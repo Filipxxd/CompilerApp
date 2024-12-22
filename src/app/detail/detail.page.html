@@ -16,7 +16,7 @@
         [(ngModel)]="compilation!.title"
         class="input-title">
       </ion-input>
-      
+
       <div class="button-wrapper">
         <ion-button (click)="onEdit()" fill="clear">
           <ion-icon slot="icon-only" name="create-outline" size="medium" />
@@ -33,13 +33,8 @@
     </div>
 
     <ion-item>
-      <ion-label color="medium"><strong>{{ 'shared.language' | translate }}</strong></ion-label>
+      <ion-label color="medium"><strong>{{ 'shared.language' | translate }}:</strong></ion-label>
       <ion-text>{{ compilation!.request!.language }}</ion-text>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="medium"><strong>{{ 'shared.code' | translate }}:</strong></ion-label>
-      <pre><code>{{ compilation!.request.code }}</code></pre>
     </ion-item>
 
     <ion-item>
@@ -47,9 +42,22 @@
       <ion-text>{{ compilation!.request.input }}</ion-text>
     </ion-item>
 
-    <ion-item>
-      <ion-label color="medium">{{ 'detailPage.output' | translate }}</ion-label>
-      <ion-text><pre>{{ compilation!.response.output }}</pre></ion-text>
+    <ion-item class="custom-item">
+      <div>
+        <ion-label color="medium"><strong>{{ 'shared.code' | translate }}:</strong></ion-label>
+        <ion-card class="scrollable-container">
+          <pre><code>{{ compilation!.request.code }}</code></pre>
+        </ion-card>
+      </div>
+    </ion-item>
+
+    <ion-item class="custom-item">
+      <div>
+        <ion-label color="medium"><strong>{{ 'detailPage.output' | translate }}:</strong></ion-label>
+        <div class="scrollable-container">
+          <ion-text><pre>{{ compilation!.response.output }}</pre></ion-text>
+        </div>
+      </div>
     </ion-item>
   </ng-template>
 </ion-content>

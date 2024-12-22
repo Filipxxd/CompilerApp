@@ -13,3 +13,17 @@
     display: flex;
     align-items: center;
 }
+
+.scrollable-container {
+  max-height: 225px;
+  overflow: auto;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.custom-item {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
