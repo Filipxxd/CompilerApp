@@ -1,0 +1,44 @@
+{
+    "shared": {
+      "language": "Język",
+      "code": "Kod",
+      "input": "Dane wejściowe",
+      "loading": "Ładowanie...",
+      "toastError": "Wystąpił błąd"
+    },
+    "tabs": {
+      "compiler": "Kompilator",
+      "savedCompilations": "Zapisane",
+      "settings": "Ustawienia"
+    },
+    "compilerPage": {
+      "title": "Kompilator",
+      "button": "Kompiluj"
+    },
+    "compilationsPage": {
+      "title": "Zapisane kompilacje",
+      "search": "Szukaj po nazwie",
+      "languageAll": "Wszystkie",
+      "noCompilations": "Brak zapisanych kompilacji"
+    },
+    "detailPage": {
+      "title": "Szczegóły kompilacji",
+      "output": "Wynik",
+      "toastSuccessSave": "Zapisano",
+      "toastSuccessDelete": "Usunięto",
+      "promptDeleteTitle": "Usuń kompilację",
+      "promptBtnDelete": "Usuń",
+      "promptBtnCancel": "Anuluj",
+      "promptDelete": "Czy na pewno chcesz usunąć tę kompilację?"
+    },
+    "settingsPage": {
+      "title": "Ustawienia",
+      "internalizationLanguage": "Język aplikacji",
+      "programmingLanguage": "Język programowania",
+      "darkMode": "Tryb ciemny",
+      "czech": "Czeski",
+      "english": "Angielski",
+      "polish": "Polski",
+      "toastSuccess": "Język został pomyślnie zmieniony"
+    }
+}

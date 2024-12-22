@@ -15,7 +15,7 @@ export class AppComponent {
     private stateService: StateService) {}
 
   ngOnInit() {
-    this.translateService.addLangs(['english', 'czech']);
+    this.translateService.addLangs(['english', 'czech', 'polish']);
 
     this.stateService.getUserSettings().then((userSettings: UserSettings) => {
       this.translateService.use(userSettings.internalization);
