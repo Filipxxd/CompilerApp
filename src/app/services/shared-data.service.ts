@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CompilerRequest, CompilerResponse } from '../models/compiler.api';
 import { Compilation } from '../models/compilation';
 
 @Injectable({
