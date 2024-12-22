@@ -87,7 +87,7 @@ export class DetailPage implements OnInit {
     if (!this.compilation) return;
 
     this.sharedDataService.setSavedCompilation(this.compilation);
-    this.router.navigate(['/tabs/compilation']);
+    this.router.navigate(['/tabs/compiler']);
   }
 
   async onDelete() {
