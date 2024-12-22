@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../detail/detail.module').then(m => m.DetailPageModule)
       },
       {
+        path: 'settings',
+        loadChildren: () => import('../settings/settings.module').then( m => m.SettingsPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/compiler',
         pathMatch: 'full'

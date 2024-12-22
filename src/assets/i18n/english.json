@@ -3,11 +3,14 @@
       "language": "Language",
       "code": "Code",
       "input": "Input",
-      "loading": "Loading..."
+      "loading": "Loading...",
+
+      "toastError": "An error occurred"
     },
     "tabs": {
       "compiler": "Compiler",
-      "savedCompilations": "Saved"
+      "savedCompilations": "Saved",
+      "settings": "Settings"
     },
     "compilerPage": {
       "title": "Compilator",
@@ -22,5 +25,12 @@
     "detailPage": {
       "title": "Compilation Detail",
       "output": "Output"
+    },
+    "settingsPage":{
+      "title": "Settings",
+      "internalizationLanguage": "Application language",
+      "czech": "Czech",
+      "english": "English",
+      "toastSuccess": "Language successfully changed"
     }
 }

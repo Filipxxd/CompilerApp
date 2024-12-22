@@ -12,16 +12,19 @@ export class StorageService {
     this.init();
   }
 
-  async init() {
-    const storage = await this.storage.create()
-    this._storage = storage
+  private async init() {
+    if (this._storage) return;
+    
+    this._storage = await this.storage.create()
   }
 
-  async get(key: string) {
+  public async get(key: string) {
+    await this.init();
     return this._storage?.get(key)
   }
 
-  public set(key: string, value: any) {
+  public async set(key: string, value: any) {
+    await this.init();
     this._storage?.set(key, value)
   }
 }

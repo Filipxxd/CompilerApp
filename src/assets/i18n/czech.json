@@ -3,11 +3,14 @@
         "language": "Jazyk",
         "code": "Kód",
         "input": "Vstup",
-        "loading": "Načítání..."
+        "loading": "Načítání...",
+
+        "toastError": "Nastala chyba"
     },
     "tabs": {
         "compiler": "Kompilátor",
-        "savedCompilations": "Uložené"
+        "savedCompilations": "Uložené",
+        "settings": "Nastavení"
     },
     "compilerPage": {
         "title": "Kompilátor",
@@ -22,5 +25,12 @@
     "detailPage": {
       "title": "Detail kompilace",
       "output": "Výstup"
+    },
+    "settingsPage":{
+      "title": "Nastavení",
+      "internalizationLanguage": "Jazyk aplikace",
+      "czech": "Čeština",
+      "english": "Angličtina",
+      "toastSuccess": "Jazyk úspěšně změněn"
     }
 }

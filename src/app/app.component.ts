@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { UserSettings } from './models/userSettings';
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,15 @@ import { TranslateService } from '@ngx-translate/core';
   standalone: false,
 })
 export class AppComponent {
- 
-  constructor(private translateService: TranslateService) {
+  constructor(
+    private translateService: TranslateService,
+    private stateService: StateService) {}
+
+  ngOnInit() {
     this.translateService.addLangs(['english', 'czech']);
-    this.translateService.setDefaultLang('czech');
+
+    this.stateService.getUserSettings().then((userSettings: UserSettings) => {
+      this.translateService.use(userSettings.internalization);
+    });
   }
 }

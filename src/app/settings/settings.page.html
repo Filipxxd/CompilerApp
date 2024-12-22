@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">{{ 'settingsPage.title' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!userSettings; else settingsContent" class="ion-padding ion-text-center">
+    <ion-spinner name="bubbles" />
+    <p>{{ 'shared.loading' | translate }}</p>
+  </div>
+
+ <ng-template #settingsContent>
+    <ion-item>
+      <ion-label position="stacked">{{ 'settingsPage.internalizationLanguage' | translate }}</ion-label>
+      <ion-select [(ngModel)]="userSettings!.internalization" name="language" (ionChange)="changeInternalizationLanguage($event)">
+        <ion-select-option *ngFor="let lang of internalizationLanguages" [value]="lang">
+          {{ ('settingsPage.' + lang) | translate }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ng-template>
+</ion-content>
