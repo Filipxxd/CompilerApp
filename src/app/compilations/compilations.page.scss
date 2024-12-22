@@ -3,3 +3,9 @@
   color: var(--ion-color-medium, #808080);
   margin-top: 20%;
 }
+
+.filter-header {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+}

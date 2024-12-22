@@ -11,7 +11,7 @@
   </div>
 
   <ng-container *ngIf="filteredCompilations">
-    <div class="ion-padding" style="display: flex; align-items: center; justify-content: space-between;">
+    <div class="filter-header ion-padding">
       <ion-searchbar
         placeholder="{{ 'compilationsPage.search' | translate }}"
         (ionInput)="onSearchChange($event)"

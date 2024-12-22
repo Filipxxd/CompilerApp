@@ -11,47 +11,45 @@
   </div>
 
   <ng-template #compilationContent>
-    <ion-card>
-      <ion-card-content>
-        <div class="header-row">
-          <ion-input
-            [(ngModel)]="compilation!.title"
-            class="input-title">
-          </ion-input>
-          
-          <div class="button-wrapper">
-            <ion-button (click)="onEdit()" fill="clear">
-              <ion-icon slot="icon-only" name="create-outline" size="medium" />
-            </ion-button>
-            <ion-button (click)="onSave()" fill="clear">
-              <ion-icon slot="icon-only" name="save-outline" size="medium" class="ion-margin-horizontal" />
-            </ion-button>
-            <ion-button (click)="onDelete()" fill="clear">
-              <ion-icon slot="icon-only" name="close-circle-outline" size="medium" />
-            </ion-button>
-          </div>
-        </div>
-      </ion-card-content>
+    <div class="header-row">
+      <ion-input
+        [(ngModel)]="compilation!.title"
+        class="input-title">
+      </ion-input>
+      
+      <div class="button-wrapper">
+        <ion-button (click)="onEdit()" fill="clear">
+          <ion-icon slot="icon-only" name="create-outline" size="medium" />
+        </ion-button>
 
-      <ion-card-content>
-        <ion-item>
-          <ion-label color="medium"><strong>{{ 'shared.language' | translate }}</strong></ion-label>
-          <ion-text>{{ compilation!.request!.language }}</ion-text>
-        </ion-item>
-        <ion-item>
-          <ion-label color="medium"><strong>{{ 'shared.code' | translate }}:</strong></ion-label>
-          <pre><code>{{ compilation!.request.code }}</code></pre>
-        </ion-item>
-        <ion-item>
-          <ion-label color="medium"><strong>{{ 'shared.input' | translate }}:</strong></ion-label>
-          <ion-text>{{ compilation!.request.input }}</ion-text>
-        </ion-item>
-      </ion-card-content>
+        <ion-button (click)="onSave()" fill="clear">
+          <ion-icon slot="icon-only" name="save-outline" size="medium" class="ion-margin-horizontal" />
+        </ion-button>
 
-      <ion-card-content>
-        <ion-card-title>{{ 'detailPage.output' | translate }}</ion-card-title>
-        <pre>{{ compilation!.response.output }}</pre>
-      </ion-card-content>
-    </ion-card>
+        <ion-button (click)="onDelete()" fill="clear">
+          <ion-icon slot="icon-only" name="close-circle-outline" size="medium" />
+        </ion-button>
+      </div>
+    </div>
+
+    <ion-item>
+      <ion-label color="medium"><strong>{{ 'shared.language' | translate }}</strong></ion-label>
+      <ion-text>{{ compilation!.request!.language }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="medium"><strong>{{ 'shared.code' | translate }}:</strong></ion-label>
+      <pre><code>{{ compilation!.request.code }}</code></pre>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="medium"><strong>{{ 'shared.input' | translate }}:</strong></ion-label>
+      <ion-text>{{ compilation!.request.input }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="medium">{{ 'detailPage.output' | translate }}</ion-label>
+      <ion-text><pre>{{ compilation!.response.output }}</pre></ion-text>
+    </ion-item>
   </ng-template>
 </ion-content>
