@@ -2,6 +2,6 @@ import { Language } from "./languages";
 
 export type UserSettings = {
     internalization: string;
-    theme: string;
+    darkTheme: boolean;
     programmingLanguage: Language;
 }

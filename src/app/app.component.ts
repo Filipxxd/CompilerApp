@@ -19,6 +19,9 @@ export class AppComponent {
 
     this.stateService.getUserSettings().then((userSettings: UserSettings) => {
       this.translateService.use(userSettings.internalization);
+
+      if (userSettings.darkTheme)
+        document.documentElement.classList.toggle('ion-palette-dark', true);
     });
   }
 }

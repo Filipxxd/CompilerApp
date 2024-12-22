@@ -29,7 +29,7 @@ export class StateService {
       if (!this.userSettings){
         this.userSettings = {
           internalization: DEFAULT_APP_LANGUAGE,
-          theme: 'light',
+          darkTheme: true,
           programmingLanguage: Language.PYTHON
         };
 

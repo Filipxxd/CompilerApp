@@ -91,4 +91,9 @@ export class SettingsPage implements OnInit {
     }
   }
   
+  async changeTheme(event: CustomEvent){
+    this.userSettings!.darkTheme = event.detail.checked;
+    await this.stateService.setUserSettings(this.userSettings!);
+    document.documentElement.classList.toggle('ion-palette-dark', this.userSettings!.darkTheme);
+  }
 }

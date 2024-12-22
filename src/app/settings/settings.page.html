@@ -28,5 +28,11 @@
         </ion-select-option>
       </ion-select>
     </ion-item>
+
+    <ion-item>
+      <ion-toggle [(ngModel)]="userSettings!.darkTheme" (ionChange)="changeTheme($event)" justify="space-between">
+        {{ 'settingsPage.darkMode' | translate }}
+      </ion-toggle>
+    </ion-item>
   </ng-template>
 </ion-content>

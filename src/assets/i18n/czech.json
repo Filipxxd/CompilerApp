@@ -30,6 +30,7 @@
       "title": "Nastavení",
       "internalizationLanguage": "Jazyk aplikace",
       "programmingLanguage": "Programovací aplikace",
+      "darkMode": "Tmavý řežim",
       "czech": "Čeština",
       "english": "Angličtina",
       "toastSuccess": "Jazyk úspěšně změněn"

@@ -30,6 +30,7 @@
       "title": "Settings",
       "internalizationLanguage": "Application language",
       "programmingLanguage": "Programming language",
+      "darkMode": "Dark mode",
       "czech": "Czech",
       "english": "English",
       "toastSuccess": "Language successfully changed"
