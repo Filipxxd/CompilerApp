@@ -1,5 +1,5 @@
 {
-  "name": "CompilerApp",
+  "name": "PocketComp",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -22,6 +22,7 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "@capacitor/android": "6.2.0",
     "@capacitor/app": "6.0.2",
     "@capacitor/core": "6.2.0",
     "@capacitor/haptics": "6.0.2",
