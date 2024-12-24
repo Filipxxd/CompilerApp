@@ -14,7 +14,8 @@
     },
     "compilerPage": {
         "title": "Kompilátor",
-        "button": "Kompilovat"
+        "button": "Kompilovat",
+        "toastCodeValidationError": "Kód nesmí být prázdný"
     },
     "compilationsPage": {
         "title": "Uložené Kompilace",
@@ -30,7 +31,8 @@
       "promptDeleteTitle": "Odstranit kompilaci",
       "promptBtnDelete": "Odstranit",
       "promptBtnCancel": "Zrušit",
-      "promptDelete": "Opravdu chcete smazat tuto kompilaci?"
+      "promptDelete": "Opravdu chcete smazat tuto kompilaci?",
+      "toastTitleValidationError": "Název musí obsahovat 1-15 znaků"
     },
     "settingsPage":{
       "title": "Nastavení",

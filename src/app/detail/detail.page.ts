@@ -57,6 +57,18 @@ export class DetailPage implements OnInit {
   async onSave() {
     if (!this.compilation) return;
 
+    if (!this.compilation.title || this.compilation.title.trim().length === 0 || this.compilation.title.length > 15) {
+      const toast = await this.toastController.create({
+        message: this.translateService.instant('detailPage.toastTitleValidationError'),
+        duration: 1500,
+        position: 'top',
+        icon: 'alert-circle-outline',
+        swipeGesture: 'vertical'
+      });
+      await toast.present();
+      return;
+    }
+
     const compilations = await this.stateService.getCompilations();
     const index = compilations.findIndex((c: { id: string; }) => c.id === this.compilation!.id);
 

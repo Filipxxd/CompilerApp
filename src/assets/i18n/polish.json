@@ -13,7 +13,8 @@
     },
     "compilerPage": {
       "title": "Kompilator",
-      "button": "Kompiluj"
+      "button": "Kompiluj",
+      "toastCodeValidationError": "Kod nie może być pusty"
     },
     "compilationsPage": {
       "title": "Zapisane Kompilacje",
@@ -29,7 +30,8 @@
       "promptDeleteTitle": "Usuń kompilację",
       "promptBtnDelete": "Usuń",
       "promptBtnCancel": "Anuluj",
-      "promptDelete": "Czy na pewno chcesz usunąć tę kompilację?"
+      "promptDelete": "Czy na pewno chcesz usunąć tę kompilację?",
+      "toastTitleValidationError": "Nazwa musi zawierać od 1 do 15 znaków"
     },
     "settingsPage": {
       "title": "Ustawienia",

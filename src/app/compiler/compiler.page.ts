@@ -47,6 +47,18 @@ export class CompilationPage implements OnInit {
   }
 
   async onSubmit() {
+    if (!this.request.code || this.request.code.trim().length === 0) {
+      const toast = await this.toastController.create({
+        message: this.translateService.instant('compilerPage.toastCodeValidationError'),
+        duration: 1500,
+        position: 'top',
+        icon: 'alert-circle-outline',
+        swipeGesture: 'vertical'
+      });
+      await toast.present();
+      return;
+    }
+
     this.isBusy = true;
 
     this.compilerApi.compileCode(this.request).subscribe({

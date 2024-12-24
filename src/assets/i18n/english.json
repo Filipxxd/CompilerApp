@@ -14,7 +14,8 @@
     },
     "compilerPage": {
       "title": "Compilator",
-      "button": "Compile"
+      "button": "Compile",
+      "toastCodeValidationError": "Code must not be empty"
     },
     "compilationsPage": {
       "title": "Saved Compilations",
@@ -30,7 +31,8 @@
       "promptDeleteTitle": "Delete compilation",
       "promptBtnDelete": "Delete",
       "promptBtnCancel": "Cancel",
-      "promptDelete": "Do you really want to delete this compilation?"
+      "promptDelete": "Do you really want to delete this compilation?",
+      "toastTitleValidationError": "Name must be 1-15 characters long"
     },
     "settingsPage":{
       "title": "Settings",
