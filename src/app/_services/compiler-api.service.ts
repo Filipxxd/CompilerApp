@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { CompilerResponse } from "../_models/compiler.api";
 import { CompilerRequest } from "../_models/compiler.api";
@@ -15,7 +15,7 @@ export class CompilerApiService {
   compileCode(data: CompilerRequest): Observable<CompilerResponse> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'x-rapidapi-host': 'code-compiler10.p.rapidapi.com',
+      'x-rapidapi-host': environment.apiHost,
       'x-rapidapi-key': environment.apiKey,
       'x-compile': 'rapidapi',
     });
