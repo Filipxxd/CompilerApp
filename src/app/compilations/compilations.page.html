@@ -5,13 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="!filteredCompilations" class="ion-padding ion-text-center">
+  <div *ngIf="!filteredCompilations" class="ion-text-center">
     <ion-spinner name="bubbles"></ion-spinner>
     <p>{{ 'shared.loading' | translate }}</p>
   </div>
 
   <ng-container *ngIf="filteredCompilations">
-    <div class="filter-header ion-padding">
+    <div class="filter-header">
       <ion-searchbar
         placeholder="{{ 'compilationsPage.search' | translate }}"
         (ionInput)="onSearchChange($event)"

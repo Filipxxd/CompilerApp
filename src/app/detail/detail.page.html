@@ -4,14 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true">
   <div *ngIf="!compilation; else compilationContent" class="ion-padding ion-text-center">
     <ion-spinner name="bubbles" />
     <p>{{ 'shared.loading' | translate }}</p>
   </div>
 
   <ng-template #compilationContent>
-    <div class="header-row">
+    <div class="header-row ion-padding">
       <ion-input
         [(ngModel)]="compilation!.title"
         class="input-title">
@@ -45,9 +45,9 @@
     <ion-item class="custom-item">
       <div>
         <ion-label color="medium"><strong>{{ 'shared.code' | translate }}:</strong></ion-label>
-        <ion-card class="scrollable-container">
-          <pre><code>{{ compilation!.request.code }}</code></pre>
-        </ion-card>
+        <div class="scrollable-container">
+           <ion-text><pre><code>{{ compilation!.request.code }}</code></pre></ion-text>
+        </div>
       </div>
     </ion-item>
 
