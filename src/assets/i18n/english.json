@@ -17,7 +17,7 @@
       "button": "Compile"
     },
     "compilationsPage": {
-      "title": "Saved compilations",
+      "title": "Saved Compilations",
       "search": "Search by name",
       "languageAll": "All",
       "noCompilations": "No saved compilations"

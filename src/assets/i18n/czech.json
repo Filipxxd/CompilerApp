@@ -17,13 +17,13 @@
         "button": "Kompilovat"
     },
     "compilationsPage": {
-        "title": "Uložené kompilace",
+        "title": "Uložené Kompilace",
         "search": "Vyhledat podle názvu",
         "languageAll": "Vše",
         "noCompilations": "Žádné uložené kompilace"
     },
     "detailPage": {
-      "title": "Detail kompilace",
+      "title": "Detail Kompilace",
       "output": "Výstup",
       "toastSuccessSave": "Uloženo",
       "toastSuccessDelete": "Odstraněno",

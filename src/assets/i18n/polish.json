@@ -16,13 +16,13 @@
       "button": "Kompiluj"
     },
     "compilationsPage": {
-      "title": "Zapisane kompilacje",
+      "title": "Zapisane Kompilacje",
       "search": "Szukaj po nazwie",
       "languageAll": "Wszystkie",
       "noCompilations": "Brak zapisanych kompilacji"
     },
     "detailPage": {
-      "title": "Szczegóły kompilacji",
+      "title": "Szczegóły Kompilacji",
       "output": "Wynik",
       "toastSuccessSave": "Zapisano",
       "toastSuccessDelete": "Usunięto",
