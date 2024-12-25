@@ -1,7 +1,7 @@
 # PocketComp
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
-![Ionic](https://img.shields.io/badge/Ionic-5.9.1-blue.svg)
+![Ionic](https://img.shields.io/badge/Ionic-7.2.0-blue.svg)
 ![RapidAPI](https://img.shields.io/badge/RapidAPI-Integration-green.svg)
 
 PocketComp is a versatile mobile application built with [Ionic](https://ionicframework.com/) that allows users to compile and execute code snippets directly from their devices. Leveraging the powerful [RapidAPI Compiler10](https://rapidapi.com/realbrain-realbrain-default/api/code-compiler10), PocketComp supports multiple programming languages and provides a seamless experience for developers on the go.
@@ -13,8 +13,7 @@ PocketComp is a versatile mobile application built with [Ionic](https://ionicfra
   - [Supported Application Languages](#supported-application-languages)
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
-  - [Steps](#steps)
-- [Running the App](#running-the-app)
+  - [Running the App](#running-the-app)
 
 ## Features
 
@@ -61,7 +60,7 @@ PocketComp supports a wide range of programming languages, including:
   ```bash
   npm install -g @ionic/cli
 
-## Running the App
+### Running the App
 
 1. Install dependencies using ```npm i```
 2. Obtain ```x-rapidapi-key``` with ```x-rapidapi-host``` for [RapidAPI Compiler10](https://rapidapi.com/realbrain-realbrain-default/api/code-compiler10)
