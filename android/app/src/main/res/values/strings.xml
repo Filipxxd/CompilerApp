@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">CompilerApp</string>
-    <string name="title_activity_main">CompilerApp</string>
-    <string name="package_name">io.ionic.compiler.app</string>
-    <string name="custom_url_scheme">io.ionic.compiler.app</string>
+    <string name="app_name">PocketComp</string>
+    <string name="title_activity_main">PocketComp</string>
+    <string name="package_name">io.ionic.pocket.comp</string>
+    <string name="custom_url_scheme">io.ionic.pocket.comp</string>
 </resources>
